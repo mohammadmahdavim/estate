@@ -1,0 +1,184 @@
+.map-container{
+    position: relative;
+}
+
+.map-center-marker {
+    width: 24px;
+    height: 40px;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    -webkit-transform: translate(50%);
+    transform: translate(50%);
+}
+
+
+/* loading */
+.snippet {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 230px;
+    height: 125px;
+    margin: 1.5rem 0;
+    background: #fff;
+    z-index: 1000000;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.snippet img {
+    display: block;
+    margin: 20px auto 0;
+}
+
+.stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.dot-floating {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #ef5662;
+    color: #ef5662;
+    animation: dotFloating 3s infinite cubic-bezier(0.15, 0.6, 0.9, 0.1);
+}
+
+.dot-floating::before,
+.dot-floating::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dot-floating::before {
+    left: -12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #ef5662;
+    color: #ef5662;
+    animation: dotFloatingBefore 3s infinite ease-in-out;
+}
+
+.dot-floating::after {
+    left: -24px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #ef5662;
+    color: #ef5662;
+    animation: dotFloatingAfter 3s infinite cubic-bezier(0.4, 0, 1, 1);
+}
+
+.overlay-loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.full-width-modal {
+    padding-right: 0 !important;
+}
+
+.full-width-modal .modal-dialog {
+    width: 100%;
+    margin: 0;
+}
+
+.full-width-modal .modal-dialog .modal-content {
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.full-width-modal .modal-dialog .modal-header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.w-50px {
+    width: 50px;
+}
+
+.mx-1 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.full-width-modal .modal-dialog .modal-header .close {
+    position: absolute;
+    left: 20px;
+    font-size: 35px;
+}
+
+@keyframes dotFloating {
+    0% {
+        left: calc(-50% - 5px);
+    }
+
+    75% {
+        left: calc(50% + 105px);
+    }
+
+    100% {
+        left: calc(50% + 105px);
+    }
+}
+
+@keyframes dotFloatingBefore {
+    0% {
+        left: -50px;
+    }
+
+    50% {
+        left: -12px;
+    }
+
+    75% {
+        left: -50px;
+    }
+
+    100% {
+        left: -50px;
+    }
+}
+
+@keyframes dotFloatingAfter {
+    0% {
+        left: -100px;
+    }
+
+    50% {
+        left: -24px;
+    }
+
+    75% {
+        left: -100px;
+    }
+
+    100% {
+        left: -100px;
+    }
+}
+
+/* loading */
